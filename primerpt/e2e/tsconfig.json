@@ -1,9 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "declarations": false,
+    "declaration": false,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators"
+    "experimentalDecorators": true,
     "lib": [ "es2016" ],
     "module": "commonjs",
     "moduleResolution": "node",
