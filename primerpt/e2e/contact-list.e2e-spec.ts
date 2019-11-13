@@ -76,4 +76,17 @@ describe('the contact list', () => {
             expect(contacts).toEqual(expectedContactList);
         });
     });
+
+    it('with reduce: get a list of contact names', () => {
+        let tbody = element(by.tagName('tbody'));
+        let trs = tbody.all(by.tagName('tr'));
+        let contacts = trs.reduce((acc, curr) => {
+            let name = curr.all(by.tagName('td')).get(1);
+            return name.getText().then(text => {
+                return acc === '' ? text : acc + ', ' + text;
+            });
+        }, '');
+        expect(contacts).toEqual(
+            'Adrian Directive, Rusty Component, Jeff Pipe, Craig Service');
+    });
 });
