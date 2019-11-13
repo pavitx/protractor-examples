@@ -1,9 +1,12 @@
+import { browser } from 'protractor';
+
 import { ContactListPageObject } from './po/contact-list.po';
 import { NewContactPageObject } from './po/new-contact.po';
-import {browser} from 'protractor';
+
 
 
 describe('contact list', () => {
+
     let contactList: ContactListPageObject;
     let newContact: NewContactPageObject;
 
@@ -36,5 +39,7 @@ describe('contact list', () => {
             expect(browser.getCurrentUrl())
                 .toBe(browser.baseUrl + '/#/');
         });
+
     });
+
 });
